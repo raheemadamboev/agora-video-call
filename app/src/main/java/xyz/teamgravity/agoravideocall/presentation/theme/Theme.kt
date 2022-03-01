@@ -1,4 +1,4 @@
-package xyz.teamgravity.agoravideocall.ui.theme
+package xyz.teamgravity.agoravideocall.presentation.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme

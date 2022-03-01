@@ -1,4 +1,4 @@
-package xyz.teamgravity.agoravideocall
+package xyz.teamgravity.agoravideocall.presentation.viewmodel
 
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
@@ -8,6 +8,7 @@ import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
+import xyz.teamgravity.agoravideocall.core.TextInputState
 
 class RoomViewModel (): ViewModel() {
 

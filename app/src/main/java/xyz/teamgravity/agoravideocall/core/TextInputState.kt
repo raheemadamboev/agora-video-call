@@ -1,4 +1,4 @@
-package xyz.teamgravity.agoravideocall
+package xyz.teamgravity.agoravideocall.core
 
 data class TextInputState(
     val text: String = "",

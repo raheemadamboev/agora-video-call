@@ -40,16 +40,23 @@ fun VideoScreen(
         permissionLauncher.launch(arrayOf(Manifest.permission.RECORD_AUDIO, Manifest.permission.CAMERA))
     }
 
-    AndroidView(
-        factory = { context ->
-            AgoraVideoViewer(
-                context = context, connectionData = AgoraConnectionData(
-                    appId = Const.APP_ID
-                )
-            ).also { agoraView = it }
-        },
-        modifier = Modifier.fillMaxSize()
-    )
+    if (viewmodel.hasAudioPermission.value && viewmodel.hasVideoPermission.value) {
+        AndroidView(
+            factory = { context ->
+                AgoraVideoViewer(
+                    context = context, connectionData = AgoraConnectionData(
+                        appId = Const.APP_ID,
+                        appToken = "df4ed11eded9458b8d47117972db8177"
+                    )
+                ).also {
+                    println("raheem: $roomName")
+                    it.join(roomName)
+                    agoraView = it
+                }
+            },
+            modifier = Modifier.fillMaxSize()
+        )
+    }
 
     BackHandler {
         agoraView?.leaveChannel()

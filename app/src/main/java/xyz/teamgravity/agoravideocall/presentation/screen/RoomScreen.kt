@@ -16,9 +16,9 @@ import xyz.teamgravity.agoravideocall.presentation.viewmodel.RoomViewModel
 
 @Composable
 fun RoomScreen(
-    onNavigate: (String) -> Unit,
-    viewmodel: RoomViewModel = viewModel()
+    onNavigate: (String) -> Unit
 ) {
+    val viewmodel = viewModel<RoomViewModel>()
 
     LaunchedEffect(key1 = true) {
         viewmodel.onJoinEvent.collectLatest { roomName ->
